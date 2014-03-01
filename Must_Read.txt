@@ -1,0 +1,39 @@
+CREATE TABLE `users` (
+ `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+ `username` varchar(10) NOT NULL,
+ `password` varchar(100) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+add user---------------------------------------------------------------
+
+
+
+insert into users (username, password) values ('bob', MD5('supersecret'));
+
+
+
+
+database_access----------------------------------------------------------
+
+
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'yourdbusername';
+$db['default']['password'] = 'yourdbpassword';
+$db['default']['database'] = 'yourdbname';
+
+
+----------------------------------default_controller-------------------------
+
+
+$route['default_controller'] = "login";
+
+
+-------------------------------default_libraries-------------------------
+
+
+$autoload['libraries'] = array('database','session');
+
+$autoload['helper'] = array('url');
+
